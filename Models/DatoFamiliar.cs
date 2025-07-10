@@ -1,6 +1,6 @@
 
 using System;
-
+namespace TP06_Drucker_Daiksel.Models;
 public class DatoContacto
 {
     // Attributes
