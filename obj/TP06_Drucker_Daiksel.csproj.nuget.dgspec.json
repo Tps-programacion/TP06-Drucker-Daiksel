@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "Z:\\4IB\\Programacion\\2do Bimestre\\TP06_Drucker_Daiksel\\TP06_Drucker_Daiksel.csproj": {}
+    "C:\\Users\\49092806\\Downloads\\TP06-Drucker-Daiksel\\TP06_Drucker_Daiksel.csproj": {}
   },
   "projects": {
-    "Z:\\4IB\\Programacion\\2do Bimestre\\TP06_Drucker_Daiksel\\TP06_Drucker_Daiksel.csproj": {
+    "C:\\Users\\49092806\\Downloads\\TP06-Drucker-Daiksel\\TP06_Drucker_Daiksel.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "Z:\\4IB\\Programacion\\2do Bimestre\\TP06_Drucker_Daiksel\\TP06_Drucker_Daiksel.csproj",
+        "projectUniqueName": "C:\\Users\\49092806\\Downloads\\TP06-Drucker-Daiksel\\TP06_Drucker_Daiksel.csproj",
         "projectName": "TP06_Drucker_Daiksel",
-        "projectPath": "Z:\\4IB\\Programacion\\2do Bimestre\\TP06_Drucker_Daiksel\\TP06_Drucker_Daiksel.csproj",
+        "projectPath": "C:\\Users\\49092806\\Downloads\\TP06-Drucker-Daiksel\\TP06_Drucker_Daiksel.csproj",
         "packagesPath": "C:\\Users\\49092806\\.nuget\\packages\\",
-        "outputPath": "Z:\\4IB\\Programacion\\2do Bimestre\\TP06_Drucker_Daiksel\\obj\\",
+        "outputPath": "C:\\Users\\49092806\\Downloads\\TP06-Drucker-Daiksel\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -43,15 +43,24 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        }
+        },
+        "SdkAnalysisLevel": "9.0.300"
       },
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "Dapper": {
+              "target": "Package",
+              "version": "[2.1.66, )"
+            },
             "Microsoft.AspNetCore.Session": {
               "target": "Package",
               "version": "[2.3.0, )"
+            },
+            "Microsoft.Data.SqlClient": {
+              "target": "Package",
+              "version": "[6.0.2, )"
             },
             "NewtonSoft.Json": {
               "target": "Package",
@@ -77,7 +86,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.206/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.301/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
