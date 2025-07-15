@@ -3,6 +3,14 @@
 }
 
 <div>
-    <h1>Index</h1>
-    <p>Bienvenidos al sitio web de NombreProyecto</p>
+    <h1>Bienvenidos a la presentacion web del grupo</h1>
+    <p>Mostraremos la presentacion de nuestro grupo</p>
+</div>
+<div>
+    <h2>LOGIN</h2>
+    <form action='@Url.Action("login", Home)' method="post" enctype="multipart/form-data">
+    Usuario: <input type="text" name="usuario">
+    Contrseña: <input type="password" name="contraseña">
+    <input type="submit" value="Login">
+    </form>
 </div>

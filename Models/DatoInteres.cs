@@ -2,10 +2,10 @@ namespace TP06_Drucker_Daiksel.Models;
 
 public class DatoInteres
 {
-int Id{ get; private set; }
-int IdUsuario{ get; private set; }
-int TipoInteres{ get; private set; }
-string Interes { get; private set; }    
+public int Id{ get; private set; }
+public int IdUsuario{ get; private set; }
+public int TipoInteres{ get; private set; }
+public string Interes { get; private set; }    
 
     public DatoInteres()
     {

@@ -1,9 +1,9 @@
 
 using System;
 namespace TP06_Drucker_Daiksel.Models;
-public class DatoContacto
+public class DatoFamiliar
 {
-    // Attributes
+    
     public int Id { get; private set; }
 
     public int IdUsuario { get; private set; }
@@ -17,12 +17,12 @@ public class DatoContacto
     public string Descripcion { get; private set; } 
 
     
-    public DatoContacto()
+    public DatoFamiliar()
     {
     }
 
     
-    public DatoContacto(int id, int idUsuario, string nombre, string apellido, string parentesco, string descripcion)
+    public DatoFamiliar(int id, int idUsuario, string nombre, string apellido, string parentesco, string descripcion)
     {
         Id = id;
         IdUsuario = idUsuario;

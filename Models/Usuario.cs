@@ -1,16 +1,16 @@
 namespace TP06_Drucker_Daiksel.Models;
 
-public class usuario
+public class Usuario
     {
-    int Id {get; private set;}
-    string Nombre { get; private set; }
-    string Apellido{ get; private set; }
-    string Email {get; private set;}
-    string Contraseña {get; private set;}
-    DateTime FechaNacimiento { get; private set; }
-    string Foto {get; private set;}   
+    public int Id {get; private set;}
+    public string Nombre { get; private set; }
+    public string Apellido{ get; private set; }
+    public string Email {get; private set;}
+    public string Contraseña {get; private set;}
+    public DateTime FechaNacimiento { get; private set; }
+    public string Foto {get; private set;}   
 
-    public DatoPersonal(int id, string nombre, string apellido, string email, string contraseña, DateTime fechaNacimiento, string foto)
+    public Usuario(int id, string nombre, string apellido, string email, string contraseña, DateTime fechaNacimiento, string foto)
     {
         Id = id;
         Nombre = nombre;
@@ -24,11 +24,11 @@ public class usuario
 
     public void obtenerEdad(){
         int edad;
-        datetime hoy = datetime.today;
+        DateTime hoy = DateTime.Today;
 
-        edad = FechaNacimiento.Years - hoy.Years;
+        edad = FechaNacimiento.Year - hoy.Year;
         
-    if (FechaNacimiento.Date > fechaActual.AddYears(-edad))
+    if (FechaNacimiento.Date > DateTime.Now.AddYears(-edad))
     {
         edad--; 
     }

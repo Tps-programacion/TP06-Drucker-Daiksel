@@ -14,21 +14,29 @@ public static class BD
         return id;
     }
 
-    public static usuario GetUsuario(int id){
-        usuario usuBuscado = null;
+    public static Usuario GetUsuario(int id){
+        Usuario usuBuscado;
          using(SqlConnection connection = new SqlConnection(_conectionString)){
             string query = "SELECT * FROM Usuario WHERE Id = @pid;";
-            usuBuscado = connection.QueryFirstOrDefault<usuario>(query,new {pid = id});  
+            usuBuscado = connection.QueryFirstOrDefault<Usuario>(query,new {pid = id});  
         }
         return usuBuscado;
     }
 
     public static List<DatoFamiliar> GetDatoFamiliar(int id){
-        list<DatoFamiliar> datos = new list<DatoFamiliar>();
+        List<DatoFamiliar> datos = new List<DatoFamiliar>();
         using(SqlConnection connection = new SqlConnection(_conectionString)){
         string query = "SELECT * FROM DatoFamiliar WHERE IdUser = @pid;";
-        datos = connection.QueryFirstOrDefault<DatoFamiliar>(query,new {pid = id});  
+        datos = connection.QueryFirstOrDefault<List<DatoFamiliar>>(query ,new {pid = id});  
         }
         return datos;
     }
+        public static List<DatoInteres> GetDatoInteres(int id){
+            List<DatoInteres> datos = new List<DatoInteres>();
+            using(SqlConnection connection = new SqlConnection(_conectionString)){
+            string query = "SELECT * FROM DatoInteres WHERE IdUser = @pid;";
+            datos = connection.QueryFirstOrDefault<List<DatoInteres>>(query,new {pid = id});  
+            }
+            return datos;
+        }
 }
