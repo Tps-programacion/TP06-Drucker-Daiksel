@@ -17,6 +17,12 @@
         <article> <input type="password" name="Contraseña" placeholder="🔑 Contraseña"> </article>
         <article class="submit"> <input type="submit" value="Iniciar sesion"> </article>
     </div>
+    <h5>@ViewBag.mensaje</h5>
+    </form>
+    <form action='@Url.Action("logout", "Home")'>
+        <div class="inputs">
+            <article class="submit"> <input type="submit" value="Desloguarse"> </article>
+        </div>
     </form>
 </div>
 
