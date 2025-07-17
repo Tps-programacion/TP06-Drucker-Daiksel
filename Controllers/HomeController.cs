@@ -17,43 +17,43 @@ public class HomeController : Controller
     {
         _logger = logger;
     }
-
+[HttpPost]
     public IActionResult login(string email, string contraseña)
-    {        
-        if (HttpContext.Session.GetString("IDUser") == null){
-            ViewBag.mensaje  = "Ya hay un usuario logueado, para ingresar denuevo primero salga de sesion";
+    {
+        
+        
+        if (HttpContext.Session.GetString("idUsuario") != null){
+            ViewBag.mensaje  = "Ya hay un usuario logueado. Para ingresar denuevo primero salga de sesion";
+            return View("Index");
+
         }
-        else
-            {
-            Usuario usuarioLogueado = null;
-            if(email == null || contraseña == null ){
-                ViewBag.mensaje = "En algunos de los campos no se ingreso informacion";
-                return View("Index");
-            }
-            else{
-                int id = -1;
-                id = BD.login(email, contraseña);
+        else{
+            int id = -1;
+            id = BD.login(email, contraseña);
                 
             if(id != -1){
+                Usuario usuarioLogueado;
                 usuarioLogueado = BD.GetUsuario(id);
                 ViewBag.Usuario = usuarioLogueado;
                 ViewBag.mensaje = "Bienvenido" + usuarioLogueado.Nombre;
-                HttpContext.Session.SetString("IDUser", id.ToString());
-                
+                HttpContext.Session.SetString("idUsuario", id.ToString());
+                return View("Bienvenida");
             }
             else{
                 ViewBag.mensaje = "Uno de los campos o ambos fueron ingresados incorrectamente.";
                 return View("Index");
+                
             }
          
         }                
-            }
-
-            return View("Bienvenida");
+            
     }
+
+
 
     public IActionResult Index()
     {
+       
         return View();
     }
 }
