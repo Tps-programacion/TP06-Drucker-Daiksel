@@ -1,16 +1,25 @@
 ﻿@{
     ViewData["Title"] = "Index";
 }
+<body>
+    
+<section>
 
-<div>
+<div class="izq">
     <h1>Bienvenidos a la presentacion web del grupo</h1>
     <p>Mostraremos la presentacion de nuestro grupo</p>
 </div>
-<div>
-    <h2>LOGIN</h2>
-    <form action='@Url.Action("login", Home)' method="post" enctype="multipart/form-data">
-    Usuario: <input type="text" name="usuario">
-    Contrseña: <input type="password" name="contraseña">
-    <input type="submit" value="Login">
+<div style="background-color: white;">
+    <h1>LOGIN</h1>
+    <form action='@Url.Action("login", "Home")' method="post" enctype="multipart/form-data">
+    <div class="inputs">
+        <article style="margin-top: 5%;"> <input type="text" name="usuario" placeholder="👤 Email"> </article>
+        <article> <input type="password" name="Contraseña" placeholder="🔑 Contraseña"> </article>
+        <article class="submit"> <input type="submit" value="Iniciar sesion"> </article>
+    </div>
     </form>
 </div>
+
+</section>
+
+</body>

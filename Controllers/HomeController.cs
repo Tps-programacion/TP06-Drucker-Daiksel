@@ -19,13 +19,9 @@ public class HomeController : Controller
     }
 
     public IActionResult login(string email, string contraseña)
-    {
-        
-        
-        if (HttpContext.Session.GetString("idUsuario") == null){
+    {        
+        if (HttpContext.Session.GetString("IDUser") == null){
             ViewBag.mensaje  = "Ya hay un usuario logueado, para ingresar denuevo primero salga de sesion";
-        
-
         }
         else
             {
@@ -42,7 +38,7 @@ public class HomeController : Controller
                 usuarioLogueado = BD.GetUsuario(id);
                 ViewBag.Usuario = usuarioLogueado;
                 ViewBag.mensaje = "Bienvenido" + usuarioLogueado.Nombre;
-                HttpContext.Session.SetString("idUsuario", id.ToString());
+                HttpContext.Session.SetString("IDUser", id.ToString());
                 
             }
             else{
