@@ -13,8 +13,8 @@
     <h1>LOGIN</h1>
     <form action='@Url.Action("login", "Home")' method="post" enctype="multipart/form-data">
     <div class="inputs">
-        <article style="margin-top: 5%;"> <input type="text" name="usuario" placeholder="👤 Email"> </article>
-        <article> <input type="password" name="Contraseña" placeholder="🔑 Contraseña"> </article>
+        <article style="margin-top: 5%;"> <input type="text" name="email" placeholder="👤 Email" required> </article>
+        <article> <input type="password" name="contraseña" placeholder="🔑 Contraseña" required> </article>
         <article class="submit"> <input type="submit" value="Iniciar sesion"> </article>
     </div>
     <h5>@ViewBag.mensaje</h5>

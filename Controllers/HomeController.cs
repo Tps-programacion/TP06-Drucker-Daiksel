@@ -34,7 +34,7 @@ public class HomeController : Controller
             if(id != -1){
                 Usuario usuarioLogueado;
                 usuarioLogueado = BD.GetUsuario(id);
-                ViewBag.Usuario = usuarioLogueado;
+                ViewBag.usuario = usuarioLogueado;
                 ViewBag.mensaje = "Bienvenido" + usuarioLogueado.Nombre;
                 HttpContext.Session.SetString("idUsuario", id.ToString());
                 return View("Bienvenida");
@@ -50,6 +50,28 @@ public class HomeController : Controller
     }
 
 
+    public IActionResult verDatosInteres(){
+        string idString = HttpContext.Session.GetString("idUsuario");
+        int id = int.Parse(idString);
+        List<DatoInteres> datosInteres = BD.GetDatoInteres(id);
+        Usuario usuarioLogueado = BD.GetUsuario(id);
+        ViewBag.datoInteres = datosInteres;
+        ViewBag.usuario = usuarioLogueado;
+        HttpContext.Session.SetString("idUsuario", id.ToString());
+        return View("datosInteres");
+    }
+
+    public IActionResult verDatosFamiliares(){
+        
+        string idString = HttpContext.Session.GetString("idUsuario");
+        int id = int.Parse(idString);
+        List<DatoFamiliar> datosFamiliar = BD.GetDatoFamiliar(id);
+        Usuario usuarioLogueado = BD.GetUsuario(id);
+        ViewBag.datoFamiliar = datosFamiliar;
+        ViewBag.usuario = usuarioLogueado;
+        HttpContext.Session.SetString("idUsuario", id.ToString());
+        return View("datosFamiliares");
+    }
 
     public IActionResult Index()
     {
