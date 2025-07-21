@@ -49,25 +49,33 @@ public class HomeController : Controller
             
     }
 
+    public IActionResult logout()
+    {
+        HttpContext.Session.SetString("idUsuario", null);
+        ViewBag.mensaje = "Udsted salio correctamente de la sesion.";
+        return View("index");
+    }
 
-    public IActionResult verDatosInteres(){
+
+    public IActionResult verDatosInteres()
+    {
         string idString = HttpContext.Session.GetString("idUsuario");
         int id = int.Parse(idString);
         List<DatoInteres> datosInteres = BD.GetDatoInteres(id);
         Usuario usuarioLogueado = BD.GetUsuario(id);
-        ViewBag.datoInteres = datosInteres;
+        ViewBag.datosInteres = datosInteres;
         ViewBag.usuario = usuarioLogueado;
         HttpContext.Session.SetString("idUsuario", id.ToString());
         return View("datosInteres");
     }
 
-    public IActionResult verDatosFamiliares(){
+    public IActionResult verDatosFamiliar(){
         
         string idString = HttpContext.Session.GetString("idUsuario");
         int id = int.Parse(idString);
-        List<DatoFamiliar> datosFamiliar = BD.GetDatoFamiliar(id);
+        List<DatoFamiliar> datosFamiliares = BD.GetDatoFamiliar(id);
         Usuario usuarioLogueado = BD.GetUsuario(id);
-        ViewBag.datoFamiliar = datosFamiliar;
+        ViewBag.datosFamiliares = datosFamiliares;
         ViewBag.usuario = usuarioLogueado;
         HttpContext.Session.SetString("idUsuario", id.ToString());
         return View("datosFamiliares");

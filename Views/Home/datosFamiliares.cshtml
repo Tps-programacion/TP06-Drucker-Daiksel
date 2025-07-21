@@ -1,0 +1,18 @@
+<h1>DATOS FAMILIARES DE @ViewBag.usuario.Nombre</h1>
+
+@if (ViewBag.datosFamiliares != null && ViewBag.datoFamiliares.Count > 0)
+{
+    @foreach (var familiar in ViewBag.datosFamiliares)
+    {
+        <p>
+            Nombre: @familiar.Nombre <br />
+            Apellido: @familiar.Apellido <br />
+            Parentesco: @familiar.Parentesco <br />
+            Descripción: @familiar.Descripcion
+        </p>
+    }
+}
+else
+{
+    <p>No hay datos familiares para mostrar.</p>
+}

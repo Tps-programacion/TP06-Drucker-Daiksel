@@ -1,7 +1,16 @@
 <h1>DATOS INTERES DE @ViewBag.usuario.Nombre</h1>
-<p>
-@ViewBag.datosFamiliares.Nombre
-@ViewBag.datosFamiliares.Apellido
-@ViewBag.datosFamiliares.Parentesco
-@ViewBag.datosFamiliares.Descripcion
-</p>
+
+@if (ViewBag.datosInteres != null && ViewBag.datosInteres.Count > 0)
+{
+    @foreach (var interes in ViewBag.datosInteres)
+    {
+        <p>
+            Tipo de Interés: @interes.TipoInteres <br />
+            Interés: @interes.Interes
+        </p>
+    }
+}
+else
+{
+    <p>No hay datos de interés para mostrar.</p>
+}
