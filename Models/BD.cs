@@ -4,7 +4,7 @@ using Dapper;
 namespace TP06_Drucker_Daiksel.Models;
 public static class BD
 {
-    private static string _conectionString = @"Server=.\SQLEXPRESS; DataBase = Remake_DataBase; Trusted_Connection = true; TrustServerCertificate = true" ;
+    private static string _conectionString = @"Server=.\SQLEXPRESS; DataBase = BaseDatosTP06; Trusted_Connection = true; TrustServerCertificate = true" ;
 public static int login(string email, string contraseña){
     int? id = -1;
     using (SqlConnection connection = new SqlConnection(_conectionString))
@@ -27,7 +27,7 @@ public static int login(string email, string contraseña){
         List<DatoFamiliar> datos = new List<DatoFamiliar>();
         using(SqlConnection connection = new SqlConnection(_conectionString)){
         string query = "SELECT * FROM DatoFamiliar WHERE IdUsuario = @pid;";
-        datos = connection.QueryFirstOrDefault<List<DatoFamiliar>>(query ,new {pid = id});  
+        datos = connection.Query<DatoFamiliar>(query,new {pid = id}).ToList();  
         }
         return datos;
     }
@@ -35,7 +35,7 @@ public static int login(string email, string contraseña){
             List<DatoInteres> datos = new List<DatoInteres>();
             using(SqlConnection connection = new SqlConnection(_conectionString)){
             string query = "SELECT * FROM DatoInteres WHERE IdUsuario = @pid;";
-            datos = connection.QueryFirstOrDefault<List<DatoInteres>>(query,new {pid = id});  
+            datos = connection.Query<DatoInteres>(query, new {pid = id}).ToList();  
             }
             return datos;
         }

@@ -35,7 +35,7 @@ public class HomeController : Controller
                 Usuario usuarioLogueado;
                 usuarioLogueado = BD.GetUsuario(id);
                 ViewBag.usuario = usuarioLogueado;
-                ViewBag.mensaje = "Bienvenido" + usuarioLogueado.Nombre;
+                ViewBag.mensaje = "Bienvenido " + usuarioLogueado.Nombre;
                 HttpContext.Session.SetString("idUsuario", id.ToString());
                 return View("Bienvenida");
             }
@@ -51,9 +51,10 @@ public class HomeController : Controller
 
     public IActionResult logout()
     {
-        HttpContext.Session.SetString("idUsuario", null);
-        ViewBag.mensaje = "Udsted salio correctamente de la sesion.";
-        return View("index");
+        
+        HttpContext.Session.Remove("idUsuario");
+        ViewBag.mensaje = "Usted salió correctamente de la sesión.";
+        return View("Index");
     }
 
 
@@ -81,9 +82,17 @@ public class HomeController : Controller
         return View("datosFamiliares");
     }
 
+    public IActionResult volverABienvenida()
+    {
+        string idString = HttpContext.Session.GetString("idUsuario");
+        int id = int.Parse(idString);
+        Usuario usuario = BD.GetUsuario(id);
+        ViewBag.usuario = usuario;
+        return View("Bienvenida");
+    }
     public IActionResult Index()
     {
-       
+
         return View();
     }
 }
