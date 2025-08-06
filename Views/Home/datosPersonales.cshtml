@@ -1,0 +1,16 @@
+<div class="datos-personales">
+    <h2>Datos Personales</h2>
+    <div>
+        <h3>Nombre:</h3> @ViewBag.usuario.Nombre
+    </div>
+    <div>
+        <h3>Apellido:</h3> @ViewBag.usuario.Apellido
+    </div>
+    <div>
+        <h3>Fecha de Nacimiento:</h3> @ViewBag.usuario.FechaNacimiento.ToString("dd/MM/yyyy")
+    </div>
+    <div>
+        <h3>Foto:</h3>
+        <img src="@ViewBag.usuario.Foto" alt="foto" />
+    </div>
+</div>

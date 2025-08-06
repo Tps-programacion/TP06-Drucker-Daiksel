@@ -6,9 +6,9 @@ namespace TP06_Drucker_Daiksel.Controllers;
 
 public class HomeController : Controller
 {
-    
 
-    
+
+
     private readonly ILogger<HomeController> _logger;
 
 
@@ -17,21 +17,24 @@ public class HomeController : Controller
     {
         _logger = logger;
     }
-[HttpPost]
+    [HttpPost]
     public IActionResult login(string email, string contraseña)
     {
-        
-        
-        if (HttpContext.Session.GetString("idUsuario") != null){
-            ViewBag.mensaje  = "Ya hay un usuario logueado. Para ingresar denuevo primero salga de sesion";
+
+
+        if (HttpContext.Session.GetString("idUsuario") != null)
+        {
+            ViewBag.mensaje = "Ya hay un usuario logueado. Para ingresar denuevo primero salga de sesion";
             return View("Index");
 
         }
-        else{
+        else
+        {
             int id = -1;
             id = BD.login(email, contraseña);
-                
-            if(id != -1){
+
+            if (id != -1)
+            {
                 Usuario usuarioLogueado;
                 usuarioLogueado = BD.GetUsuario(id);
                 ViewBag.usuario = usuarioLogueado;
@@ -39,19 +42,20 @@ public class HomeController : Controller
                 HttpContext.Session.SetString("idUsuario", id.ToString());
                 return View("Bienvenida");
             }
-            else{
+            else
+            {
                 ViewBag.mensaje = "Uno de los campos o ambos fueron ingresados incorrectamente.";
                 return View("Index");
-                
+
             }
-         
-        }                
-            
+
+        }
+
     }
 
     public IActionResult logout()
     {
-        
+
         HttpContext.Session.Remove("idUsuario");
         ViewBag.mensaje = "Usted salió correctamente de la sesión.";
         return View("Index");
@@ -70,8 +74,9 @@ public class HomeController : Controller
         return View("datosInteres");
     }
 
-    public IActionResult verDatosFamiliar(){
-        
+    public IActionResult verDatosFamiliar()
+    {
+
         string idString = HttpContext.Session.GetString("idUsuario");
         int id = int.Parse(idString);
         List<DatoFamiliar> datosFamiliares = BD.GetDatoFamiliar(id);
@@ -94,5 +99,13 @@ public class HomeController : Controller
     {
 
         return View();
+    }
+        public IActionResult verUsuario()
+    {
+        string idString = HttpContext.Session.GetString("idUsuario");
+        int id = int.Parse(idString);
+        Usuario usuario = BD.GetUsuario(id);
+        ViewBag.usuario = usuario;
+        return View("datosPersonales");
     }
 }

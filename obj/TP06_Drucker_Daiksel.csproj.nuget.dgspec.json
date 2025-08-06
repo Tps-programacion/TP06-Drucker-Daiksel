@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Federico\\Desktop\\Colegio\\Prog\\TP06-Drucker-Daiksel\\TP06_Drucker_Daiksel.csproj": {}
+    "C:\\Users\\Federico\\Desktop\\Colegio\\Prog\\2025\\TP06-Drucker-Daiksel\\TP06_Drucker_Daiksel.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Federico\\Desktop\\Colegio\\Prog\\TP06-Drucker-Daiksel\\TP06_Drucker_Daiksel.csproj": {
+    "C:\\Users\\Federico\\Desktop\\Colegio\\Prog\\2025\\TP06-Drucker-Daiksel\\TP06_Drucker_Daiksel.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Federico\\Desktop\\Colegio\\Prog\\TP06-Drucker-Daiksel\\TP06_Drucker_Daiksel.csproj",
+        "projectUniqueName": "C:\\Users\\Federico\\Desktop\\Colegio\\Prog\\2025\\TP06-Drucker-Daiksel\\TP06_Drucker_Daiksel.csproj",
         "projectName": "TP06_Drucker_Daiksel",
-        "projectPath": "C:\\Users\\Federico\\Desktop\\Colegio\\Prog\\TP06-Drucker-Daiksel\\TP06_Drucker_Daiksel.csproj",
+        "projectPath": "C:\\Users\\Federico\\Desktop\\Colegio\\Prog\\2025\\TP06-Drucker-Daiksel\\TP06_Drucker_Daiksel.csproj",
         "packagesPath": "C:\\Users\\Federico\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Federico\\Desktop\\Colegio\\Prog\\TP06-Drucker-Daiksel\\obj\\",
+        "outputPath": "C:\\Users\\Federico\\Desktop\\Colegio\\Prog\\2025\\TP06-Drucker-Daiksel\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Federico\\AppData\\Roaming\\NuGet\\NuGet.Config",
