@@ -49,11 +49,79 @@ h2{
 
 .izq{
   background-color: lightblue;
-  padding-top: 21%;
-  padding-bottom: 21%;
+  padding-top: 18%;
+  padding-bottom: 18%;
 }
 
 .submit{
   width: 50%;
   margin-left: 50%;
+}
+
+body {
+  font-family: sans-serif;
+  background-color: #f9f9f9;
+  color: #222;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  padding: 2em 1em;
+  text-align: center;
+  background-color: #fff;
+  border-bottom: 1px solid #ddd;
+}
+
+h1, h3 {
+  margin: 0.5em 0;
+  font-weight: 400;
+}
+
+.SECCIONES {
+  width: 40%;
+  margin: 2em auto;
+  padding: 1em;
+  background-color: #fff;
+  border: 1px solid #eee;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+p {
+  background-color: #fff;
+  margin: 1em auto;
+  padding: 1em;
+  max-width: 600px;
+  border-left: 3px solid #ccc;
+}
+
+a {
+  color: #0066cc;
+  text-decoration: none;
+  margin-right: 1em;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.enlaces {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+h3 {
+  margin: 0;
+  width: auto;
+  float: none;
+}
+
+.boton{
+  width: 100%;
+  text-align: center;
+  margin-top: 5%;
 }

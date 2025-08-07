@@ -4,7 +4,7 @@ using Dapper;
 namespace TP06_Drucker_Daiksel.Models;
 public static class BD
 {
-    private static string _conectionString = @"Server=.\SQLEXPRESS; DataBase = BaseDatosTP06; Trusted_Connection = true; TrustServerCertificate = true" ;
+    private static string _conectionString = @"Server=localhost;Database=BaseDatosTP06;Trusted_Connection=True; TrustServerCertificate = true" ;
 public static int login(string email, string contraseña){
     int? id = -1;
     using (SqlConnection connection = new SqlConnection(_conectionString))
